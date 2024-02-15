@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="profileFragmentViewModel"
+            type="com.agnidating.agni.ui.fragment.profile.ProfileFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.fragment.profile.ProfileFragment">
+
+        <com.agnidating.agni.utils.custom_view.PoppinsSemiBoldTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="center_vertical"
+            android:text="@string/my_profile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_margin="@dimen/_16sdp"
+            android:background="@drawable/bg_gradient_border"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/civProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_4sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_border_color="@color/background"
+                app:riv_border_width="@dimen/_8sdp"
+                app:riv_corner_radius="@dimen/_30sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.agnidating.agni.utils.custom_view.PoppinsMediumTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName">
+
+            <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+                android:id="@+id/tvSetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_light_grey_stroke"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/settings"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+                android:id="@+id/tvEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_light_grey_stroke"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/edit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

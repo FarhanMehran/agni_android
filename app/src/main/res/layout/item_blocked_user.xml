@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.agnidating.agni.model.blockUser.BlockedUser" />
+        <import type="android.view.View"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bg_gray_round_corner">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civProfile"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_margin="@dimen/_10ssp"
+            android:src="@drawable/user_placeholder_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:text="@{item.name}"
+            app:layout_constraintStart_toEndOf="@+id/civProfile"
+            app:layout_constraintTop_toTopOf="@+id/civProfile"
+            app:layout_constraintBottom_toBottomOf="@id/civProfile"
+            />
+
+        <TextView
+            android:id="@+id/tvUnblock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:background="@drawable/bg_gradient"
+            android:paddingVertical="@dimen/_4sdp"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/unblock"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintTop_toTopOf="@+id/civProfile"
+            app:layout_constraintBottom_toBottomOf="@id/civProfile"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

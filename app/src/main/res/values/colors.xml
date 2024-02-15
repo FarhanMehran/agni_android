@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FF000000</color>
+    <color name="purple_500">#FF000000</color>
+    <color name="purple_700">#FF000000</color>
+    <color name="teal_200">#89216B</color>
+    <color name="teal_700">#FF000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="highlight_color">#26FFFFFF</color>
+    <color name="orange_pink">#DA4453</color>
+    <color name="pink">#89216B </color>
+    <color name="success">#4CAF50</color>
+    <color name="background">#141414</color>
+    <color name="light_grey">#61FFFFFF</color>
+    <color name="text_color">#797979</color>
+    <color name="stroke_color">#3D3C3C</color>
+    <color name="bg_color">#242424</color>
+    <color name="gray_45">#73FFFFFF</color>
+    <color name="white70">#878383</color>
+    <color name="iphone_bag">#12FFFFFF</color>
+    <color name="purple">#8884FF</color>
+    <color name="bg_solid">#14C4C4C4</color>
+    <color name="white_opacity_2">#05FFFFFF</color>
+
+</resources>

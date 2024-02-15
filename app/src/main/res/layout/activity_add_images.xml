@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.activities.addImages.AddImagesActivity">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/back"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:gravity="start"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <com.agnidating.agni.utils.custom_view.PoppinsMediumTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_images"
+            app:layout_constraintStart_toStartOf="@+id/ivBack"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/ivBack"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/white"
+            />
+
+        <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_text"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivBack"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/white"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAddImages"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_add_image"
+            app:spanCount="2"
+            tools:itemCount="4"
+            app:layout_constraintBottom_toTopOf="@id/btNext"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:textColor="@color/white"
+            android:background="@drawable/buttons"
+            app:layout_constraintTop_toBottomOf="@+id/rvAddImages"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

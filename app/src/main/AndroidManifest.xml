@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.agnidating.agni">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:name="com.agnidating.agni.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/launcher_icon"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/launcher_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Date"
+        tools:targetApi="n">
+        <activity
+            android:name="com.agnidating.agni.ui.activities.getStarted.GetStarted"
+            android:exported="false" />
+        <activity
+            android:name="com.agnidating.agni.ui.activities.splash.SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.agnidating.agni.ui.activities.completeProfile.CompleteProfileActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.auth.verifyPhone.VerifyPhoneActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.addImages.AddImagesActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.writeBio.WriteBio" />
+        <activity android:name="com.agnidating.agni.ui.activities.dashboard.DashboardActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name="com.agnidating.agni.ui.activities.welcome.WelcomeActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.auth.phone.YourPhoneActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.notifications.NotificationsActivity" />
+        <activity android:name=".ui.activities.plans.PlanSelectionActivity" />
+        <activity android:name=".ui.fragment.chat.ChatActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+<!--        Push Notification-->
+        <service
+            android:name="com.agnidating.agni.service.NotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/launcher_icon" />
+
+    </application>
+
+</manifest>

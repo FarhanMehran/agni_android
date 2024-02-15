@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.activities.welcome.Welcome">
+
+        <com.agnidating.agni.utils.custom_view.PoppinsMediumTextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_30ssp"
+            android:text="@string/welcome_n_to_agni"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_35sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <com.agnidating.agni.utils.custom_view.PoppinsMediumTextView
+            android:id="@+id/tvWelcomeText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/don_t_go_on_a_date_go_on"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+            app:layout_constraintEnd_toEndOf="@+id/tvWelcome"
+            app:layout_constraintStart_toStartOf="@+id/tvWelcome"
+            />
+
+        <com.agnidating.agni.utils.custom_view.PoppinsMediumTextView
+            android:id="@+id/tvWelcomeText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/an_advanture"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/fire"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@+id/tvWelcomeText2"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeText2"
+            app:layout_constraintStart_toStartOf="@+id/tvWelcomeText2"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:src="@drawable/welcome_emo"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeText3"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:text="@string/lets_start"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/buttons"
+            android:layout_margin="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
