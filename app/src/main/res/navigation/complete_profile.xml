@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/complete_profile.xml"
+    app:startDestination="@id/navYourName"
+    >
+
+    <fragment android:id="@+id/navYourName"
+        android:name="com.agnidating.agni.ui.fragment.yourName.YourNameFragment"
+        android:label="Complete Profile"
+        tools:layout="@layout/activity_your_name"
+        >
+        <action
+            android:id="@+id/action_navYourName_to_navLocation"
+            app:destination="@id/navLocation"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+
+    <fragment android:id="@+id/navLocation"
+        android:name="com.agnidating.agni.ui.fragment.yourLocation.YourLocationFragment"
+        android:label="Location"
+        tools:layout="@layout/activity_your_location"
+        >
+        <action
+            android:id="@+id/action_navLocation_to_navBirthday"
+            app:destination="@id/navBirthday"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/navBirthday"
+        android:name="com.agnidating.agni.ui.fragment.yourBirthday.YourBirthdayFragment"
+        android:label="Birthday"
+        tools:layout="@layout/activity_your_birthday" >
+        <action
+            android:id="@+id/action_navBirthday_to_gender"
+            app:destination="@id/gender"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/gender"
+        android:name="com.agnidating.agni.ui.fragment.gender.GenderFragment"
+        android:label="Gender"
+        tools:layout="@layout/activity_gender"
+        >
+        <action
+            android:id="@+id/action_gender_to_showMe"
+            app:destination="@id/showMe"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/showMe"
+        android:name="com.agnidating.agni.ui.fragment.showMe.ShowMeFragment"
+        android:label="Show Me"
+        tools:layout="@layout/activity_show_me"
+        >
+        <action
+            android:id="@+id/action_showMe_to_nav_education"
+            app:destination="@id/nav_education"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+
+    <fragment android:id="@+id/nav_education"
+        android:name="com.agnidating.agni.ui.fragment.education.EducationOccupation"
+        android:label="Education"
+        tools:layout="@layout/fragment_education_occupation"
+        >
+        <action
+            android:id="@+id/action_nav_education_to_nav_religion"
+            app:destination="@id/nav_religion"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+
+    <fragment android:id="@+id/nav_religion"
+        android:name="com.agnidating.agni.ui.fragment.religionCommunity.ReligionFragment"
+        android:label="Religion"
+        tools:layout="@layout/fragment_religion_community"
+        >
+        <action
+            android:id="@+id/action_nav_religion_to_nav_community"
+            app:destination="@id/nav_community"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+
+    <fragment android:id="@+id/nav_community"
+        android:name="com.agnidating.agni.ui.fragment.religionCommunity.CommunityFragment"
+        android:label="Religion"
+        tools:layout="@layout/fragment_religion_community"
+        />
+
+</navigation>

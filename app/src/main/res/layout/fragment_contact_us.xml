@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/back"
+            />
+
+        <com.agnidating.agni.utils.custom_view.PoppinsMediumTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_us"
+            app:layout_constraintStart_toStartOf="@+id/ivBack"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@+id/ivBack"
+            android:textSize="@dimen/_18ssp"
+            android:textColor="@color/white"
+            />
+
+        <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_your_details"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivBack"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/white"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:gravity="center"
+            android:src="@drawable/contact_us"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_email"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/_15sdp"
+            android:textColor="@color/white"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
+            android:layout_margin="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:background="@drawable/bg_light_grey_stroke"
+            android:paddingBottom="@dimen/_15sdp"
+            android:paddingStart="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/ivContact"
+            android:textColorHint="@color/light_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/subject"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/_15sdp"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:layout_margin="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:background="@drawable/bg_light_grey_stroke"
+            android:paddingBottom="@dimen/_15sdp"
+            android:paddingStart="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"
+            android:textColorHint="@color/light_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/message"
+            android:gravity="top"
+            android:paddingTop="@dimen/_8sdp"
+            android:textColor="@color/white"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:imeOptions="actionNext"
+            android:layout_margin="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            android:background="@drawable/occupation"
+            android:paddingBottom="@dimen/_8sdp"
+            android:paddingHorizontal="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@+id/etSubject"
+            android:textColorHint="@color/light_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/_15sdp"
+            android:textColor="@color/white"
+            android:background="@drawable/buttons"
+            app:layout_constraintTop_toBottomOf="@+id/etMessage"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.activities.writeBio.WriteBio">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/back"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:gravity="start"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+            <com.agnidating.agni.utils.custom_view.PoppinsMediumTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/work"
+                app:layout_constraintStart_toStartOf="@+id/ivBack"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack"
+                android:textSize="@dimen/_20ssp"
+                android:textColor="@color/white"
+                />
+
+            <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+                android:id="@+id/tvEducation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/education_job"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@+id/ivBack"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/white" />
+
+            <RadioGroup android:id="@+id/rgEducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:checkedButton="@id/rbHighSchool"
+                >
+                <RadioButton android:id="@+id/rbHighSchool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/high_school"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    />
+
+                <RadioButton android:id="@+id/rbGraduation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/graduation"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    />
+
+                <RadioButton android:id="@+id/rbPg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_grad"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    />
+
+            </RadioGroup>
+                <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+                    android:id="@+id/tvOccupation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/occupation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="@+id/ivBack"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/white" />
+            <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+                android:id="@+id/tvCounts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_00_50"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_9ssp"
+                android:textColor="@color/white"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etOccupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/_12sdp"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:textColor="@color/white"
+                        android:hint="@string/occupation"
+                        android:maxLines="4"
+                        android:lines="4"
+                        android:gravity="top"
+                        android:maxLength="50"
+                        android:inputType="textMultiLine"
+                        android:textSize="@dimen/_12ssp"
+                        android:background="@drawable/occupation"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textColorHint="@color/light_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@drawable/buttons"
+                app:layout_constraintTop_toBottomOf="@+id/etPhone"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

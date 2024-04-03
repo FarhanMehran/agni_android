@@ -1,285 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.capcorp">
+    package="com.agnidating.agni">
 
-    <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="33" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission
-        android:name="android.permission.CAMERA"
-        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
-        android:name=".utils.MyApplication"
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:name="com.agnidating.agni.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/launcher_icon"
+        android:label="@string/app_name"
         android:usesCleartextTraffic="true"
-        tools:replace="android:allowBackup">
+        android:roundIcon="@mipmap/launcher_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Date"
+        tools:targetApi="n">
         <activity
-            android:name=".ui.user.homescreen.account.activity.RecentsPayoutActivity"
-            android:screenOrientation="portrait"
+            android:name="com.agnidating.agni.ui.activities.getStarted.GetStarted"
             android:exported="false" />
         <activity
-            android:name=".ui.user.homescreen.ActivityCheckout"
-            android:exported="false" />
-        <activity
-            android:name=".ui.tutorial.TutorialActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-            android:launchMode="standard"
-            tools:replace="android:launchMode" />
-        <activity
-            android:name=".ui.ProviderLocationActivity"
-            android:exported="false"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".ui.splash.VideoViewActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.home.ImageViewerActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.thefinestartist.finestwebview.FinestWebViewActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="false"
-            android:screenOrientation="sensor"
-            android:theme="@style/FinestWebViewTheme.Light" />
-        <activity
-            android:name=".ui.user.homescreen.report.ReportActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.base.BaseActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.settings.profile.otheruserProfile.AllReviewActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.settings.profile.otheruserProfile.OtherUserProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.payment.ConnectStripeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.payment.card_list.CardListActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <activity
-            android:name=".ui.settings.profile.support.SupportOrderActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.payment.add_card.CardActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.settings.profile.support.SupportActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.chat.search_chat.SearchUserActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.detail_offer_completed.detail_delivery.HomeCompltedUserActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.detail_offer_completed.detail_delivery.HomeCompleteDriverActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.detail_offer_accepted.shop.ShopDetailsUserActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.detail_offer_accepeted.home_delivery.HomeDeliveryDetailDriverActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.mydeliveries.filter.FilterActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user_signup.upload_documents.UploadDocumentsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.splash.SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:name="com.agnidating.agni.ui.activities.splash.SplashActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.user.homescreen.home.create_order_from_web.CreateOrderFromWeb"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.mydeliveries.MyDeliveriesActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.home.ship_here2dare.location_details.activity.ShipmentActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.home.ship_here2dare.location_details.activity.ShipmentActivityNextStep"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.home.ship_here2dare.location_details.activity.OrderSuccessActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.home.ship_here2dare.location_details.activity.SendMyOrderActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user_signup.thanks.ThanksShopperActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user_signup.upload_image.UploadImageActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user_signup.thanks.ThanksTravellerActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user_signup.verification_code.VerificationCodeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user_signup.signup_users.SignUpActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.home.transport.productinformation.ProductInformationActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.account.activity.PayoutsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user_signup.createPassword.CreatePasswordActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.signup.resetpassword.ResetPasswordActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.capcropdriver.ui.loginsignup.contactinfo.ContactInfoActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.signup.SignInActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.signup.SignupActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateVisible" />
-        <activity
-            android:name=".ui.user.homescreen.HomeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.home.makeoffer.request_detail.RequestDetailDriver"
-            android:exported="false"
-            android:label="@string/request_detail_driver"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.user.homescreen.orders.add_receiver.AddReceiverDetail"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.driver.homescreen.mydeliveries.detail_offer_made.OfferMadeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.user.homescreen.orders.request_detail.RequestDetailActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.user.homescreen.orders.RequestBeforeDetailActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.driver.homescreen.HomeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.driver.homescreen.home.makeoffer.MakeAnOfferActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.user.homescreen.chat.chatmessage.ChatActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.yalantis.ucrop.UCropActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.settings.profile.profile.ProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.signup.GetStartedActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
 
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_places_api_key" />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="@string/default_notification_channel_id" />
+        <activity android:name="com.agnidating.agni.ui.activities.completeProfile.CompleteProfileActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.auth.verifyPhone.VerifyPhoneActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.addImages.AddImagesActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.writeBio.WriteBio" />
+        <activity android:name="com.agnidating.agni.ui.activities.dashboard.DashboardActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name="com.agnidating.agni.ui.activities.welcome.WelcomeActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.auth.phone.YourPhoneActivity" />
+        <activity android:name="com.agnidating.agni.ui.activities.notifications.NotificationsActivity" />
+        <activity android:name=".ui.activities.plans.PlanSelectionActivity" />
+        <activity android:name=".ui.fragment.chat.ChatActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -288,20 +56,21 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
+                android:resource="@xml/file_path" />
         </provider>
 
+<!--        Push Notification-->
         <service
-            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
-            android:enabled="true"
-            android:exported="false" />
-        <service
-            android:name=".fcm.MyFirebaseMessagingService"
-            android:exported="true">
+            android:name="com.agnidating.agni.service.NotificationService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/launcher_icon" />
+
     </application>
 
 </manifest>

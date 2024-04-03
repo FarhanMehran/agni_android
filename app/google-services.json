@@ -1,49 +1,40 @@
 {
   "project_info": {
-    "project_number": "577070008057",
-    "firebase_url": "https://here2dare-f920c.firebaseio.com",
-    "project_id": "here2dare-f920c",
-    "storage_bucket": "here2dare-f920c.appspot.com"
+    "project_number": "144460752583",
+    "project_id": "agni-dating",
+    "storage_bucket": "agni-dating.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:577070008057:android:c5c97c7968806700990428",
+        "mobilesdk_app_id": "1:144460752583:android:1c7a562f020b49dc4f40e2",
         "android_client_info": {
-          "package_name": "com.here2dare"
+          "package_name": "com.agnidating.agni"
         }
       },
       "oauth_client": [
         {
-          "client_id": "577070008057-drfv79sr78lac1eav0vnmv2p6i2vc4st.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.here2dare",
-            "certificate_hash": "1772744cf93009810aae4afe68c1c680b0afdbcc"
-          }
-        },
-        {
-          "client_id": "577070008057-vgf16k6fpj61o2i1pgji2mfnip95om8e.apps.googleusercontent.com",
+          "client_id": "144460752583-attq46emo8m7boomhhtd616ftgcsddu8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCWKZ7TiidAlVMKGTIlhZw3jorSZv-SoZY"
+          "current_key": "AIzaSyBz9rnM7X7BuG90QkL9jf1O2f1wcUMhs5M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "577070008057-l1hqioh2ab7n4j1u12cpl7cn30fqmgbv.apps.googleusercontent.com",
+              "client_id": "144460752583-attq46emo8m7boomhhtd616ftgcsddu8.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "577070008057-6b4uq06n1063pten5dcv0r3rkm32bf0s.apps.googleusercontent.com",
+              "client_id": "144460752583-go8dslrm3bo23ti7abggo9pcr1ckpvvr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.here2dare.driver"
+                "bundle_id": "com.agni.co"
               }
             }
           ]

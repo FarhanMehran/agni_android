@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_5sdp"
+        android:background="@color/background">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+          />
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/cardStackView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:elevation="@dimen/_5sdp"
+            tools:listitem="@layout/item_home_cards"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <LinearLayout android:id="@+id/rlNoData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:elevation="@dimen/_6sdp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:src="@drawable/all_cauht_up"
+                android:layout_centerHorizontal="true"
+                />
+
+            <com.agnidating.agni.utils.custom_view.PoppinsSemiBoldTextView
+                android:id="@+id/tvMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:gravity="center"
+                android:text="@string/oh_ho_looks_like_you_re_all_caught_up"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+            <com.agnidating.agni.utils.custom_view.PoppinsLightTextView
+                android:id="@+id/tvSub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:gravity="center"
+                android:text="@string/sub_home"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                />
+            <com.agnidating.agni.utils.custom_view.PoppinsLightTextView
+                android:id="@+id/tvChangePreferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:gravity="center"
+                android:text="@string/changePrefs"
+                android:textColor="@color/orange_pink"
+                android:textSize="@dimen/_10ssp"
+                />
+
+            <com.agnidating.agni.utils.custom_view.PoppinsLightTextView
+                android:id="@+id/tvOr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:gravity="center"
+                android:text="@string/or"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                />
+            <com.agnidating.agni.utils.custom_view.PoppinsLightTextView
+                android:id="@+id/tvRejected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:gravity="center"
+                android:elevation="@dimen/_6sdp"
+                android:text="@string/rejected_users"
+                android:textColor="@color/orange_pink"
+                android:textSize="@dimen/_10ssp"
+                />
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

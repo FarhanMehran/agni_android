@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.agnidating.agni.model.countries.Country" />
+    </data>
+
+    <com.agnidating.agni.utils.custom_view.CheckableConstraintLayout
+        android:id="@+id/consFour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:clickable="true"
+        android:background="@drawable/country_selection"
+        app:layout_constraintTop_toBottomOf="@+id/consThree">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivFlag4"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/_15sdp"
+            app:selectedCountry="@{item.nameCode}"
+            app:countryPicker="@{ccp}"
+            />
+
+<!--
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFlag4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/_15sdp"
+            android:src="@drawable/ic_flag" />
+-->
+
+        <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/ivFlag4"
+            app:layout_constraintEnd_toStartOf="@id/ivCountryCode"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="@+id/ivFlag4"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFlag4"
+            android:text="@{item.name}"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:textColor="@color/white" />
+
+        <com.hbb20.CountryCodePicker android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ccpDialog_showFlag="true"
+            app:ccp_showFlag="true"
+            android:visibility="gone"
+            />
+
+        <com.agnidating.agni.utils.custom_view.PoppinsRegularTextView
+            android:id="@+id/ivCountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivFlag4"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFlag4"
+            android:text='@{"+"+item.phoneCode}'
+            android:paddingEnd="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textColor="@color/white" />
+
+
+
+
+    </com.agnidating.agni.utils.custom_view.CheckableConstraintLayout>
+</layout>

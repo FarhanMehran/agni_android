@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#389ca3</color>
-    <color name="colorPrimaryDark">#389ca3</color>
-    <color name="colorAccent">#389ca3</color>
-    <color name="ripplePrimary">#6f00246b</color>
-    <color name="white">#ffffff</color>
-    <color name="hint_white">#45ffffff</color>
-    <color name="grey_line">#1F4C4C4C</color>
-    <color name="grey_lines">#0F4C4C4C</color>
-
-    <color name="white_50">#80ffffff</color>
-    <color name="app_green">#53ccad</color>
-    <color name="link">#40CED3</color>
-    <color name="black">#000</color>
-    <color name="black1">#DE000000</color>
-    <color name="black50">#66000000</color>
-    <color name="black_hint">#31000000</color>
-    <color name="pickup">#FFFB7585</color>
-    <color name="grey_error">#757575</color>
-    <color name="view_accept">#1F00246B</color>
-    <color name="chat_list_title">#FF484848</color>
-    <color name="chat_list_subtitle">#bf484848</color>
-    <color name="error">#d32f2f</color>
-    <color name="error_color">#FF3B30</color>
-    <color name="success_color">#3D46DB</color>
-    <color name="transparent">#00000000</color>
-    <color name="text_unselected">#3C000000</color>
-    <color name="black00">#DE000000</color>
-
-    <color name="here2dare_green">#23E5B6</color>
-    <color name="light_colorPrimary">#4D389CA3</color>
+    <color name="purple_200">#FF000000</color>
+    <color name="purple_500">#FF000000</color>
+    <color name="purple_700">#FF000000</color>
+    <color name="teal_200">#89216B</color>
+    <color name="teal_700">#FF000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="highlight_color">#26FFFFFF</color>
+    <color name="orange_pink">#DA4453</color>
+    <color name="pink">#89216B </color>
+    <color name="success">#4CAF50</color>
+    <color name="background">#141414</color>
+    <color name="light_grey">#61FFFFFF</color>
+    <color name="text_color">#797979</color>
+    <color name="stroke_color">#3D3C3C</color>
+    <color name="bg_color">#242424</color>
+    <color name="gray_45">#73FFFFFF</color>
+    <color name="white70">#878383</color>
+    <color name="iphone_bag">#12FFFFFF</color>
+    <color name="purple">#8884FF</color>
+    <color name="bg_solid">#14C4C4C4</color>
+    <color name="white_opacity_2">#05FFFFFF</color>
 
 </resources>

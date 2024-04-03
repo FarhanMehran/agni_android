@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.agnidating.agni.ui.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_userDetailsDialogFragment"
+            app:destination="@id/userDetailsDialogFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+<!--
+        <action
+            android:id="@+id/action_homeFragment_to_chat_fragment"
+            app:destination="@id/chat_fragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+-->
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/matches"
+        android:name="com.agnidating.agni.ui.fragment.matches.MatchesFragment"
+        android:label="matches"
+        tools:layout="@layout/fragment_matches"/>
+    <fragment
+        android:id="@+id/connections"
+        android:name="com.agnidating.agni.ui.fragment.connection.ConnectitonFragment"
+        android:label="Connections"
+        tools:layout="@layout/fragment_connection">
+        <action
+            android:id="@+id/action_matches_to_userDetailsDialogFragment"
+            app:destination="@id/userDetailsDialogFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+<!--
+        <action
+            android:id="@+id/action_matches_to_chatFragment"
+            app:destination="@id/chat_fragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+-->
+    </fragment>
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.agnidating.agni.ui.fragment.message.MessageFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message">
+<!--
+        <action
+            android:id="@+id/action_messageFragment_to_chat_fragment"
+            app:destination="@id/chat_fragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+-->
+    </fragment>
+
+<!--
+    <activity
+        android:id="@+id/chat_fragment"
+        android:name="com.agnidating.agni.ui.fragment.chat.ChatFragment"
+        android:label="chat_fragment"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="receiverId"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_chat_fragment_to_userDetailsDialogFragment"
+            app:destination="@id/userDetailsDialogFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+    </activity>
+-->
+
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.agnidating.agni.ui.fragment.favourite.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favouriteFragment_to_userDetailsDialogFragment"
+            app:destination="@id/userDetailsDialogFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.agnidating.agni.ui.fragment.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_phone_number"
+            app:destination="@id/phone_number"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_location_fragment"
+            app:destination="@id/location_fragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_age_fragment"
+            app:destination="@id/age_fragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_showMe_fragment"
+            app:destination="@id/showMe_fragment"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_contact_us"
+            app:destination="@id/contact_us"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_distance_range"
+            app:destination="@id/distance_range"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_nav_community"
+            app:destination="@id/nav_community"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_nav_religion"
+            app:destination="@id/nav_religion"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_nav_education"
+            app:destination="@id/nav_education"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+        <action
+            android:id="@+id/action_setting_fragment_to_nav_privacy_policy"
+            app:destination="@id/nav_privacy_policy"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"/>
+        <action
+            android:id="@+id/action_settingFragment_to_nav_block_user"
+            app:destination="@id/nav_block_user"
+            app:enterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.agnidating.agni.ui.fragment.editProfile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+        <argument
+            android:name="images"
+            app:argType="com.agnidating.agni.model.profile.Images[]"
+            app:nullable="true"/>
+        <argument
+            android:name="bio"
+            app:argType="string"
+            app:nullable="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/phone_number"
+        android:name="com.agnidating.agni.ui.fragment.phoneNumber.PhoneNumberFragment"
+        android:label="fragment_phone_number"
+        tools:layout="@layout/fragment_phone_number"/>
+
+    <fragment
+        android:id="@+id/location_fragment"
+        android:name="com.agnidating.agni.ui.fragment.location.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location">
+        <argument
+            android:name="interestedLocation"
+            app:argType="string" />
+        <argument
+            android:name="interestedLat"
+            app:argType="string" />
+        <argument
+            android:name="interestedLong"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/age_fragment"
+        android:name="com.agnidating.agni.ui.fragment.preferredAgeRange.PreferredAgeRangeFragment"
+        android:label="age_fragment"
+        tools:layout="@layout/fragment_preferred_age_range">
+        <argument
+            android:name="minAge"
+            app:argType="string" />
+        <argument
+            android:name="maxAge"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/showMe_fragment"
+        android:name="com.agnidating.agni.ui.fragment.showMe.UpdateShowMeFragment"
+        android:label="fragment_show_me"
+        tools:layout="@layout/activity_show_me">
+        <argument
+            android:name="interestedGender"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/contact_us"
+        android:name="com.agnidating.agni.ui.fragment.contactUs.ContactUsFragment"
+        android:label="contact_us"
+        tools:layout="@layout/fragment_contact_us"/>
+    <fragment
+        android:id="@+id/distance_range"
+        android:name="com.agnidating.agni.ui.fragment.distanceRange.DistanceRangeFragment"
+        android:label="fragment_distance_range"
+        tools:layout="@layout/fragment_distance_range">
+        <argument
+            android:name="minAge"
+            app:argType="string" />
+        <argument
+            android:name="maxAge"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/userDetailsDialogFragment"
+        android:name="com.agnidating.agni.ui.fragment.userDetails.UserDetailsDialogFragment"
+        android:label="UserDetailsDialogFragment"
+        tools:layout="@layout/fragment_user_details"/>
+    <fragment
+        android:id="@+id/nav_education"
+        android:name="com.agnidating.agni.ui.fragment.education.EducationOccupation"
+        android:label="Education"
+        tools:layout="@layout/fragment_education_occupation" />
+    <fragment
+        android:id="@+id/nav_religion"
+        android:name="com.agnidating.agni.ui.fragment.religionCommunity.ReligionFragment"
+        android:label="Religion"
+        tools:layout="@layout/fragment_religion_community" />
+    <fragment android:id="@+id/nav_community"
+        android:name="com.agnidating.agni.ui.fragment.religionCommunity.CommunityFragment"
+        android:label="Religion"
+        tools:layout="@layout/fragment_religion_community" />
+    <fragment
+        android:id="@+id/nav_privacy_policy"
+        android:name="com.agnidating.agni.ui.fragment.settings.OurPrivacyPolicyFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_block_user"
+        android:name="com.agnidating.agni.ui.fragment.blocked_user.BlockedUserFragment"
+        android:label="@string/blocked_users"
+        tools:layout="@layout/fragment_blocked_user">
+    </fragment>
+</navigation>
