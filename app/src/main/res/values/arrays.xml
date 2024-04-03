@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="initial_range_slider_values">
-        <item>0</item>
-        <item>100</item>
+    <string-array name="signup_titles">
+        <item>Phone number</item>
+        <item>Verification</item>
+        <item>Welcome</item>
+        <item>Create Password</item>
+        <item>Login</item>
+        <item>Enter Password</item>
+    </string-array>
+
+    <string-array name="home_titles">
+        <item>Transport anything from anywhere</item>
+        <item>Parcel your goods with trust and security</item>
+        <item>Get groceries delivered at your doorstep by a trusted person</item>
+        <item>Get anything crowd shipped from anywhere</item>
+    </string-array>
+    <string-array name="home_subtitles">
+        <item>Looking to move something big from one place to another? Get it done by real people with low prices</item>
+        <item>Looking to move something big from one place to another? Get it done by real people with low prices</item>
+        <item>Looking to move something big from one place to another? Get it done by real people with low prices</item>
+        <item>Looking to move something big from one place to another? Get it done by real people with low prices</item>
+    </string-array>
+
+    <array name="home_icons_res_ids">
+        <item>@drawable/img_transport</item>
+        <item>@drawable/img_orders</item>
+        <item>@drawable/img_grocery</item>
+        <item>@drawable/img_ship</item>
     </array>
-    <array name="age_range">
-        <item>18</item>
-        <item>75</item>
-    </array>
+
+    <string-array name="order_titles">
+        <item>@string/offer_made_caps</item>
+        <item>@string/accepted_caps</item>
+        <item>@string/completed_caps</item>
+    </string-array>
+
 </resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".ui.user.homescreen.account.AccountFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUserProfile"
+            android:layout_width="80dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_height="80dp"
+            android:src="@drawable/user_image"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@id/ivUserProfile"
+            android:layout_marginStart="20dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/bariol_bold"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <ImageView
+            android:id="@+id/ivVerified"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:src="@drawable/ic_verify_active"
+            app:layout_constraintStart_toEndOf="@id/tvUsername"
+            app:layout_constraintTop_toTopOf="@id/tvUsername"
+            app:layout_constraintBottom_toBottomOf="@id/tvUsername"/>
+        <RatingBar
+            android:id="@+id/ratingBarUser"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black_hint"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="#EA8C2B"
+            app:layout_constraintTop_toBottomOf="@id/tvUsername"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:secondaryProgressTint="@android:color/transparent"
+            android:stepSize="1" />
+
+        <TextView
+            android:id="@+id/tvEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingBarUser"
+            android:layout_marginTop="8dp"
+            android:text="@string/view_edit_profile"
+            android:textAllCaps="true"
+            android:fontFamily="@font/bariol_bold"
+            app:layout_constraintTop_toBottomOf="@id/ratingBarUser"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!--<ImageView
+            android:id="@+id/ivBadgeIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="@id/tvType"
+            app:layout_constraintTop_toBottomOf="@id/ivUserProfile"
+            app:layout_constraintEnd_toEndOf="@id/tvType"
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingBarUser"
+            android:layout_marginTop="8dp"
+            android:text="@string/new_traveler"
+            android:textAllCaps="true"
+            android:fontFamily="@font/bariol_regular"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toBottomOf="@id/ivBadgeIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/grey_error"
+            android:textSize="14sp"
+            android:textStyle="bold" />-->
+
+        <View
+            android:id="@+id/View1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/grey_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEditProfile"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_setting"
+            app:layout_constraintTop_toBottomOf="@id/View1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/btnSwitch"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/bg_button"
+            android:gravity="center"
+            android:paddingHorizontal="50dp"
+            android:text="@string/switch_to_traveler"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/bariol_regular"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvItem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

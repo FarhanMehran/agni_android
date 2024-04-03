@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/viewUp"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:background="@color/view_accept"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivStatusImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_tracking_product_received_inactive"
+        app:layout_constraintEnd_toEndOf="@id/viewUp"
+        app:layout_constraintStart_toStartOf="@id/viewUp"
+        app:layout_constraintTop_toBottomOf="@+id/viewUp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/bariol_bold"
+        android:maxLines="1"
+        android:text="@string/delivery_confirmation"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/viewUp"
+        app:layout_constraintTop_toBottomOf="@id/viewUp" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/bariol_bold"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewUp" />
+
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/bariol_regular"
+        android:maxLines="1"
+        android:text="@string/waiting_on_you"
+        android:textColor="@color/grey_error"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/viewUp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/btnStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/bg_button_8dp"
+        android:fontFamily="@font/bariol_regular"
+        android:maxLines="1"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:text="@string/add_information"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/viewUp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+
+    <View
+        android:id="@+id/viewDown"
+        android:layout_width="2dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="50dp"
+        android:background="@color/view_accept"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivStatusImage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

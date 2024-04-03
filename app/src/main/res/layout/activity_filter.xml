@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView_filter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvBackFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="?android:selectableItemBackground"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/bariol_regular"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/back"
+        android:textAllCaps="true"
+        android:textColor="@color/black50"
+        app:drawableStartCompat="@drawable/ic_back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/HeadTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="@dimen/_15dp"
+        android:fontFamily="@font/bariol_bold"
+        android:text="@string/filters"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBackFilter" />
+
+    <TextView
+        android:id="@+id/tvReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tvTitle"
+        android:layout_alignBottom="@id/tvTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/bariol_bold"
+        android:text="@string/reset"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin24"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/bariol_bold"
+        android:text="@string/price_range"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvReset" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="@dimen/margin24"
+        android:fontFamily="@font/bariol_bold"
+        android:text="@string/_5000"
+        android:textSize="15sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvReset" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:max="5000"
+        android:maxHeight="4dp"
+        android:min="0"
+        android:minHeight="2dp"
+        android:progress="5000"
+        android:progressDrawable="@drawable/bg_seekbar_progress"
+        android:thumb="@drawable/bg_seekbar_thumb"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+    <TextView
+        android:id="@+id/tvReward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin24"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/bariol_bold"
+        android:text="@string/reward_range"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+    <TextView
+        android:id="@+id/tv_reward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_marginRight="@dimen/margin24"
+        android:fontFamily="@font/bariol_bold"
+        android:text="@string/_5000"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvReward" />
+
+    <SeekBar
+        android:id="@+id/seekbar_reward"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:max="5000"
+        android:maxHeight="4dp"
+        android:min="0"
+        android:minHeight="2dp"
+        android:progress="5000"
+        android:progressDrawable="@drawable/bg_seekbar_progress"
+        android:thumb="@drawable/bg_seekbar_thumb"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_reward" />
+
+    <TextView
+        android:id="@+id/tvFilterDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin24"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/bariol_bold"
+        android:text="@string/filter_by_date"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekbar_reward" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/edtEndDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin24"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg_editext_bg"
+        android:fontFamily="@font/bariol_regular"
+        android:hint="@string/end_date"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/edtStartDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFilterDate" />
+
+    <TextView
+        android:id="@+id/edtStartDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/margin24"
+        android:background="@drawable/bg_editext_bg"
+        android:fontFamily="@font/bariol_regular"
+        android:hint="@string/start_date"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edtEndDate"
+        app:layout_constraintTop_toBottomOf="@id/tvFilterDate" />
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin24"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="@dimen/margin24"
+        android:fontFamily="@font/bariol_bold"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtStartDate" />
+
+    <RadioGroup
+        android:visibility="gone"
+        android:id="@+id/radio_group_filter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_activity">
+
+        <RadioButton
+            android:id="@+id/radio_delivery_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/bariol_regular"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:singleLine="true"
+            android:text="@string/delivery_only"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio_pick_up_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/bariol_regular"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:singleLine="true"
+            android:text="@string/pick_up_only"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio_shop_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/bariol_regular"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:singleLine="true"
+            android:text="@string/shop_only"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio_none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:fontFamily="@font/bariol_regular"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="@dimen/dimen_8"
+            android:paddingBottom="@dimen/dimen_8"
+            android:singleLine="true"
+            android:text="@string/all"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25sp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_drawable_white_rating"
+        android:text="@string/cancel"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_apply"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_apply"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25sp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_button"
+        android:text="@string/apply"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_cancel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

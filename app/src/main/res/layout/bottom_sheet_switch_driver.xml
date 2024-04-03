@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/chooseOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:text="@string/choose_option"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+
+
+    <TextView
+        android:id="@+id/tv_switch_compnay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chooseOption"
+        android:layout_toEndOf="@+id/ivChat"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTint="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:text="Switch to Company"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/tv_switch_freelancer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_switch_compnay"
+        android:layout_toEndOf="@+id/ivCall"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTint="#00246b"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:text="Switch to Freelancer"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_switch_freelancer"
+        android:gravity="center"
+        android:paddingBottom="16dp"
+        android:text="@string/cancel"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</RelativeLayout>

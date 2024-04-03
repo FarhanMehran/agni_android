@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvAccountName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_15dp"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/bariol_regular"
+        android:gravity="center_vertical"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCardId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/_15dp"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/bariol_regular"
+        android:gravity="center_vertical"
+        android:textAllCaps="true"
+        android:textColor="@color/black50"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAccountName" />
+
+    <TextView
+        android:id="@+id/tvExpiryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/_15dp"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/bariol_regular"
+        android:gravity="center_vertical"
+        android:textAllCaps="true"
+        android:textColor="@color/black50"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCardId"
+        app:layout_constraintTop_toBottomOf="@id/tvAccountName" />
+
+    <ImageView
+        android:id="@+id/ivTick"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_radio_on"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivCardType"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivTick"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_visa"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_light"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

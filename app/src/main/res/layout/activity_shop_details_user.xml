@@ -1,0 +1,333 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_collapseMode="pin">
+
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="?android:selectableItemBackground"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/back"
+            android:textAllCaps="true"
+            android:textColor="@color/black50"
+            app:drawableStartCompat="@drawable/ic_back_btn" />
+
+        <TextView
+            android:id="@+id/tvHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="8dp"
+            android:text="@string/help"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvCallDriver"
+        android:layout_below="@+id/toolBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_parent_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin24"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:id="@+id/tvItemName"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/bariol_bold"
+                android:textColor="@color/black1"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/bariol_regular"
+                android:text="@string/amount_to_paid"
+                android:textAllCaps="true"
+                android:textColor="@color/black50"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/bariol_regular"
+                android:text="@string/reaching_by"
+                android:textAllCaps="true"
+                android:textColor="@color/black50"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bariol_regular"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/tvRequiredByDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bariol_regular"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/bariol_regular"
+                android:text="@string/view_order_details"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+            <ImageView
+                android:id="@+id/ivMap"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/grey_line"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <ImageView
+                android:id="@+id/ivMapUser"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:visibility="invisible"
+                android:background="@drawable/drawable_circle_image"
+                android:elevation="8dp"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ivMap"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <com.capcorp.utils.ShapeTextView
+                android:id="@+id/tvMapName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:elevation="4dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivMapUser"
+                app:radius="14dp"
+                app:solidBackgroundColor="@color/white"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
+
+
+            <TextView
+                android:id="@+id/tvReciverDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/bariol_regular"
+                android:text="@string/receiver_details"
+                android:textAllCaps="true"
+                android:textColor="@color/black50"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@+id/ivMap" />
+
+            <TextView
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:visibility="gone"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bg_broder_button"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingHorizontal="10dp"
+                android:text="@string/add"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvReciverDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvReciverDetail" />
+
+
+            <View
+                android:id="@+id/View1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/margin24"
+                android:background="@color/grey_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvReciverDetail"
+                app:layout_constraintTop_toBottomOf="@+id/tvReciverDetail" />
+
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/bariol_regular"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@+id/View1" />
+
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/bariol_regular"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+
+            <TextView
+                android:id="@+id/tvTrackItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/bariol_regular"
+                android:text="@string/track_your_item"
+                android:textAllCaps="true"
+                android:textColor="@color/black50"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber" />
+
+            <TextView
+                android:id="@+id/tvOrderCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/order_code"
+                android:textAllCaps="true"
+                android:textColor="@color/here2dare_green"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="@id/View1"
+                app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber" />
+
+            <View
+                android:id="@+id/viewSep1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/grey_line"
+                app:layout_constraintEnd_toEndOf="@+id/tvItemName"
+                app:layout_constraintStart_toStartOf="@+id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrackItem" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItemsTracking"
+                app:layout_constraintTop_toBottomOf="@id/viewSep1"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                tools:listitem="@layout/raw_tracking"
+                tools:itemCount="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvCallDriver"
+        style="@style/Base.Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_button"
+        android:fontFamily="@font/bariol_bold"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="32dp"
+        android:text="@string/contact_driver"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>

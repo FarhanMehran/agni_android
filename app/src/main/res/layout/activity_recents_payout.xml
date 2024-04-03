@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:ignore="Overdraw"
+    tools:context=".ui.user.homescreen.account.activity.RecentsPayoutActivity">
+
+    <TextView
+        android:id="@+id/tvBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="@string/back"
+        android:textAllCaps="true"
+        android:textColor="@color/black50"
+        app:drawableStartCompat="@drawable/ic_back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10dp"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:focusable="true"
+        android:fontFamily="@font/bariol_regular"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:text="@string/payouts"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBack" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_10dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_round_corner_grey_blur_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCheckout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+    android:layout_marginRight="@dimen/_10dp"
+        android:layout_marginLeft="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_15dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+           android:layout_marginLeft="@dimen/_10dp"
+            android:textColor="@color/black1"
+           />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:padding="5dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black1"
+            android:textColorHint="@color/black_hint"
+            android:textSize="20sp"
+            android:text="Alex James"
+    />
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/black1"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/accountNumber"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:textColor="@color/black1"
+                />
+
+            <EditText
+                android:id="@+id/etAccountNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black1"
+                android:textColorHint="@color/black_hint"
+                android:textSize="20sp"
+                android:text="124124124124"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/black1"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginRight="@dimen/_10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="1dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bankName"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:textColor="@color/black1"
+                />
+
+            <EditText
+                android:id="@+id/etBankname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="@string/bankName"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black1"
+                android:textColorHint="@color/black_hint"
+                android:textSize="20sp"
+                android:text="Emirates NBD"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/black1"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginRight="@dimen/_10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="1dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="@dimen/_15dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/countrystripeaccount"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:textColor="@color/black1"
+                />
+
+            <EditText
+                android:id="@+id/etCountryStripe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black1"
+                android:textColorHint="@color/black_hint"
+                android:textSize="20sp"
+                android:text="USA"
+                />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_10dp"
+        android:background="@drawable/shape_round_corner_grey_blur_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:clickable="true"
+            android:drawablePadding="10dp"
+            android:focusable="true"
+            android:fontFamily="@font/bariol_regular"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="@string/recentpayouts"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_marginLeft="@dimen/_10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBack" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_recentpayouts" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

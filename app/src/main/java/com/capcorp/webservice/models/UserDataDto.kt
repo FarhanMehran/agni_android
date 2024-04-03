@@ -1,0 +1,36 @@
+package com.capcorp.webservice.models
+
+data class UserDataDto(
+    var firstName: String = "",
+    var lastName: String = "",
+    var emailId: String = "",
+    var agencyName: String = "",
+    var fullName: String = "",
+    var phoneNo: String = "",
+    var countryCode: String = "",
+    var fullNumber: String = "",
+    var isApproved: Boolean = false,
+    var isMute: Boolean = false,
+    var isBlocked: Boolean = false,
+    var isDeleted: Boolean = false,
+    var settingApplied: Boolean = false,
+    var noDilvery: Boolean = false,
+    var recentOrders: Boolean = false,
+    var nearestOrders: Boolean = false,
+    var highestEarningOrders: Boolean = false,
+    var leastEarningOrders: Boolean = false,
+    var filterType: String = "",
+    var _id: String = "",
+    var __v: Int = 1,
+    var deviceToken: String = "",
+    var createdDate: Double = 0.0,
+    var type: String = "",
+    var userExists: Boolean = false,
+    var accessToken: String = "",
+    var profilePicURL: ProfileData,
+    var typeView: Int = 1,
+    var isDriverSelected: Boolean?,
+    var header: String = "",
+    var driverId: String = ""
+
+)
