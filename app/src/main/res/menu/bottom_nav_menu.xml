@@ -6,10 +6,10 @@
         android:icon="@drawable/ic_home"
         android:title="@string/discover" />
 
-    <item
-        android:id="@+id/favouriteFragment"
-        android:icon="@drawable/ic_star"
-        android:title="@string/favourite" />
+<!--    <item-->
+<!--        android:id="@+id/favouriteFragment"-->
+<!--        android:icon="@drawable/ic_star"-->
+<!--        android:title="@string/favourite" />-->
 
 
     <item

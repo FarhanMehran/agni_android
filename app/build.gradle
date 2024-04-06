@@ -19,7 +19,6 @@ android {
         }
     }
     compileSdk 32
-
     defaultConfig {
         applicationId "com.agnidating.agni"
         minSdk 21
@@ -27,8 +26,15 @@ android {
         versionCode 11
         versionName "2.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "BASE_URL", "\"https://agnidating.co/Api/\""
-        buildConfigField "String", "SOCKET_URL", "\"ws://132.148.73.255:8073?\""
+        buildConfigField "String", "BASE_URL", "\"https://agnidating.net/Api/\""
+
+//        https://agnidating.co/Api/  old
+//        https://agnidating.net/Api/Home/ new
+
+//        ws://77.37.45.86:8076? new
+//        ws://132.148.73.255:8073? old
+
+        buildConfigField "String", "SOCKET_URL", "\"ws://77.37.45.86:8076?\""
         signingConfig signingConfigs.release
         renderscriptSupportModeEnabled true
     }

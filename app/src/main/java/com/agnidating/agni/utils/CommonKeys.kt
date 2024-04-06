@@ -19,7 +19,7 @@ object CommonKeys {
     const val USER_ID: String="user_id"
     const val STATUS: String="status"
     const val FOR_UPDATE="for_update"
-    const val IMAGE_BASE_URL="https://agnidating.co/public/profileImg/"
+    const val IMAGE_BASE_URL="https://agnidating.net/public/profileImg/"
     const val USER_DETAILS=0
     const val SEND_REQUEST=1
     const val FLOWER=2
