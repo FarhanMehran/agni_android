@@ -3,7 +3,6 @@ package com.agnidating.agni.utils
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.DatePickerDialog
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.res.Resources
 import android.os.Build
@@ -14,7 +13,6 @@ import android.text.TextUtils
 import android.text.format.DateUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.util.Log
 import android.util.Patterns
 import android.util.TypedValue
 import android.view.View
@@ -26,7 +24,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.Fragment
 import com.agnidating.agni.R
@@ -368,7 +365,7 @@ fun getCreatedOn(): String {
     return format.format(Date())
 }
 @SuppressLint("HardwareIds")
-fun Context.getDeviceId(): String {
+fun Context.getDeviceIds(): String {
     return Settings.Secure.getString(
         this.contentResolver,
         Settings.Secure.ANDROID_ID

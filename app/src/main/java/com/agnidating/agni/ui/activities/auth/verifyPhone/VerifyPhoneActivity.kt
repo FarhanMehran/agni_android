@@ -89,7 +89,7 @@ class VerifyPhoneActivity : ScopedActivity() {
                    map["code"]=nameCode
                    map["status"]=status
                    map["state"] = "NO"
-                   map["devId"] = getDeviceId()
+                   map["devId"] = getDeviceIds()
                    map["devType"] = "android"
                    map["devToken"] = devToken
                    if (isUpdate){
@@ -110,7 +110,7 @@ class VerifyPhoneActivity : ScopedActivity() {
                 map["code"] = nameCode
                 map["phone"] = phone.replace(" ","").replace("-","")
                 map["state"] = "NO"
-                map["devId"] = getDeviceId()
+                map["devId"] = getDeviceIds()
                 map["devType"] = "android"
                 map["status"] = status
                 map["devToken"] = devToken

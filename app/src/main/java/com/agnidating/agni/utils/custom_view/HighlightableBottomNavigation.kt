@@ -17,7 +17,7 @@ class HighlightableBottomNavigation(val mContext: Context,val attrs: AttributeSe
     var size=0
     var selectedMenuItem=-1
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         paint.color = ContextCompat.getColor(mContext,R.color.highlight_color)
         if(selectedMenuItem!=-1){

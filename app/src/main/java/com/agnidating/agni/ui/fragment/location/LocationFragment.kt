@@ -124,8 +124,10 @@ class LocationFragment : ScopedFragment() {
     private fun getAddressFromLocation(location: Location?): String {
         if (location!=null){
             val geoCoder= Geocoder(requireContext(), Locale.getDefault())
-            val addresses= geoCoder.getFromLocation(location.latitude,location.longitude,1)[0]
-            return addresses.locality
+            val addresses= geoCoder.getFromLocation(location.latitude,location.longitude,1)?.get(0)
+            if (addresses != null) {
+                return addresses.locality
+            }
         }
         return ""
     }

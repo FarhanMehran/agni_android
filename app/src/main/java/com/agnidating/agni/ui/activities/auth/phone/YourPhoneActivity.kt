@@ -2,10 +2,12 @@ package com.agnidating.agni.ui.activities.auth.phone
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
 import com.agnidating.agni.R
@@ -25,7 +27,7 @@ import javax.inject.Inject
  * Created by AJAY ASIJA
  */
 @AndroidEntryPoint
-class YourPhoneActivity : ScopedActivity() {
+class YourPhoneActivity : ScopedActivity(){
     private  var devToken=""
     private lateinit var launcher: ActivityResultLauncher<Intent>
     private lateinit var binding: ActivityYourPhoneBinding
@@ -163,7 +165,7 @@ class YourPhoneActivity : ScopedActivity() {
                     viewModel.updatePhone(map)
                 } else {
                     map["state"] = "NO"
-                    map["devId"] = getDeviceId()
+                    map["devId"] = getDeviceIds()
                     map["devType"] = "android"
                     map["status"] = status.toString()
                     map["devToken"] = devToken

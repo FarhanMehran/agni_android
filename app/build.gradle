@@ -18,13 +18,13 @@ android {
             keyPassword 'Agni@123'
         }
     }
-    compileSdk 32
+    compileSdk 34
     defaultConfig {
         applicationId "com.agnidating.agni"
         minSdk 21
-        targetSdk 32
-        versionCode 11
-        versionName "2.1"
+        targetSdk 34
+        versionCode 13
+        versionName "2.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BASE_URL", "\"https://agnidating.net/Api/\""
 

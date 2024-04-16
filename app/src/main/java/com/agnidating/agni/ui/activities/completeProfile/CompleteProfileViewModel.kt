@@ -192,8 +192,10 @@ class CompleteProfileViewModel @Inject constructor(private val apiService: ApiSe
         if (location!=null){
             val geoCoder= Geocoder(mContext, Locale.getDefault())
             val addresses= geoCoder.getFromLocation(location.latitude,location.longitude,1)
-            if (addresses.isNotEmpty()){
-                return addresses[0].locality
+            if (addresses != null) {
+                if (addresses.isNotEmpty()){
+                    return addresses[0].locality
+                }
             }
             return ""
         }

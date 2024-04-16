@@ -19,7 +19,7 @@ constructor(
     private var paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var size: Int=0
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         paint.color = ContextCompat.getColor(mContext,R.color.highlight_color)
         val radius = size / 2f
