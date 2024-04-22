@@ -74,6 +74,11 @@ data class Data(
     var phoneVerification: String,
     @SerializedName("temp_phn")
     var tempPhn: String,
+
     @SerializedName("profileImg")
-    var profileImg: List<Images>
+    var profileImg: List<Images>,
+
+    @SerializedName("thumbnails")
+    var profileImg_thumnails: List<Images>
+
 ) : Parcelable

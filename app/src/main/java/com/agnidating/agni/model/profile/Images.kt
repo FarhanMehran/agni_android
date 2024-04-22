@@ -14,5 +14,8 @@ data class Images(
     @SerializedName("series")
     var series: String,
     @SerializedName("user_id")
-    var userId: String
+    var userId: String,
+    @SerializedName("thumbnail")
+    var thumbnail : String
+
 ) : Parcelable

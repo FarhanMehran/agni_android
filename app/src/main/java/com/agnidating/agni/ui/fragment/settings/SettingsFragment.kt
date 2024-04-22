@@ -143,7 +143,7 @@ class SettingsFragment : ScopedFragment() {
     private fun handleResponse(data: Data) {
         profileData=data
         binding.tvName.text=data.name+", ${data.birthDate.toAge()}"
-        binding.ivProfile.load(data.profileImg[0].profile,CommonKeys.IMAGE_BASE_URL)
+        binding.ivProfile.load(data.profileImg[0].thumbnail,CommonKeys.IMAGE_ThUMBNAIL_BASE_URL)
         binding.switchHideProfile.isChecked= data.isHide=="1"
     }
     /**
@@ -157,7 +157,7 @@ class SettingsFragment : ScopedFragment() {
                 putExtra(CommonKeys.PHONE,profileData?.phone)
             })
         }
-
+up
         binding.btLogout.setOnClickListener {
             viewModel.logout()
         }
