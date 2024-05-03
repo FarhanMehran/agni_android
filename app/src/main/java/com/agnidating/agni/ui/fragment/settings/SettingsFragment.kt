@@ -157,7 +157,6 @@ class SettingsFragment : ScopedFragment() {
                 putExtra(CommonKeys.PHONE,profileData?.phone)
             })
         }
-up
         binding.btLogout.setOnClickListener {
             viewModel.logout()
         }

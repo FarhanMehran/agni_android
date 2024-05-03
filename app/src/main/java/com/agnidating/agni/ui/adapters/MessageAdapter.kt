@@ -25,11 +25,11 @@ class MessageAdapter @Inject constructor(val list: ArrayList<Data>, private val 
         if (sharedPrefs.getString(CommonKeys.USER_ID)==item.senderId){
             holder.binding.tvVendorPlanName.text=  if (item.receiverSuspendedStatus=="1" ) "Agni User" else item.receiverName
             if (item.receiverSuspendedStatus!="1")
-                holder.binding.civProfile.load(item.receiverProfilePicture,CommonKeys.IMAGE_BASE_URL)
+                holder.binding.civProfile.load(item.receiverProfilePicture,CommonKeys.IMAGE_ThUMBNAIL_BASE_URL)
         }else{
             holder.binding.tvVendorPlanName.text= if (item.receiverSuspendedStatus=="1" ) "Agni User" else item.senderName
             if (item.receiverSuspendedStatus!="1")
-                holder.binding.civProfile.load(item.senderProfilePicture,CommonKeys.IMAGE_BASE_URL)
+                holder.binding.civProfile.load(item.senderProfilePicture,CommonKeys.IMAGE_ThUMBNAIL_BASE_URL)
         }
         holder.binding.root.setOnClickListener {
             onSelect.invoke(item)
