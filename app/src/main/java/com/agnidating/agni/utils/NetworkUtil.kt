@@ -43,7 +43,6 @@ fun Context.isOnline(): Boolean {
     }
     return false
 }
-
 /**
  * Safe call api and handle api response
  */
@@ -93,7 +92,6 @@ suspend fun <T : BaseResponse> safeApiCall(apiCall: suspend () -> Response<T>): 
         }
     }
 }
-
 /**
  * convert error body to base response
  */

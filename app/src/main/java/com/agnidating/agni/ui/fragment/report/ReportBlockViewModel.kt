@@ -25,8 +25,8 @@ class ReportBlockViewModel @Inject constructor(private val apiService: ApiServic
 
     fun reportUser(
         map: HashMap<String, RequestBody>,
-        images: ArrayList<MultipartBody.Part>
-    ){
+        images: ArrayList<MultipartBody.Part>)
+    {
         baseLiveData.postValue(ResultWrapper.Loading())
         viewModelScope.launch {
             val response= safeApiCall { apiService.reportUser(map,images) }

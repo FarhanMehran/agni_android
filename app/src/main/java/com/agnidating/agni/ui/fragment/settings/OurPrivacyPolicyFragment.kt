@@ -26,17 +26,16 @@ class OurPrivacyPolicyFragment : ScopedFragment() {
         binding= FragmentOurPoliciesBinding.inflate(LayoutInflater.from(context))
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvPrivacyPolicy.setOnClickListener {
-            requireActivity().openChromeTab("https://agnidating.co/privacyPolicy")
+            requireActivity().openChromeTab("https://agnidating.net/privacyPolicy")
         }
         binding.tvAboutUs.setOnClickListener {
-            requireActivity().openChromeTab("https://agnidating.co/about")
+            requireActivity().openChromeTab("https://agnidating.net/about")
         }
         binding.tvTermPolicy.setOnClickListener {
-            requireActivity().openChromeTab("https://agnidating.co/termCondition")
+            requireActivity().openChromeTab("https://agnidating.net/termCondition")
         }
         binding.ivBack.setOnClickListener {
             findNavController().popBackStack()

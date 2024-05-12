@@ -3,6 +3,7 @@ package com.agnidating.agni.ui.fragment.report
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -100,7 +101,9 @@ class ReportBottomSheet(val user: User) :BottomSheetDialogFragment(),
                 val map= HashMap<String,RequestBody>()
                 map["note"]=binding.tvReport.text.toString().toRequestBody("text/plain".toMediaTypeOrNull())
                 map["reportId"]=user.id.toRequestBody("text/plain".toMediaTypeOrNull())
+                Log.d("user___http", user.id.toString())
                 viewModel.reportUser(map,images.toMultipartList("img[]","image/*"))
+                Log.d("maps",map.toString())
             }else{
                 requireActivity().showToast("Enter description")
             }
