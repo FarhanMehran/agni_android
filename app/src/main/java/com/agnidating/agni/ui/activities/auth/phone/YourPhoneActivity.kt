@@ -60,9 +60,9 @@ class YourPhoneActivity : ScopedActivity(){
     private fun iniView() {
         binding.tvPrivacyPolicy.setSpannedString("privacy policies","Terms"){
             if (it == "Terms"){
-                openChromeTab("https://agnidating.co/termCondition")
+                openChromeTab("https://agnidating.net/termCondition")
             }else{
-                openChromeTab("https://agnidating.co/privacyPolicy")
+                openChromeTab("https://agnidating.net/privacyPolicy")
             }
         }
         if (isUpdate) {
