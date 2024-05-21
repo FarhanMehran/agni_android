@@ -11,7 +11,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import java.util.ArrayList
 import javax.inject.Inject
 
 /**
@@ -23,9 +22,9 @@ class ReportBlockViewModel @Inject constructor(private val apiService: ApiServic
     var baseLiveData = MutableLiveData<ResultWrapper<BaseResponse>>()
     var blockLiveData = MutableLiveData<ResultWrapper<BaseResponse>>()
 
-    fun reportUser(
-        map: HashMap<String, RequestBody>,
-        images: ArrayList<MultipartBody.Part>)
+   fun reportUser(
+    map: HashMap<String, RequestBody>,
+    images: ArrayList<MultipartBody.Part>)
     {
         baseLiveData.postValue(ResultWrapper.Loading())
         viewModelScope.launch {

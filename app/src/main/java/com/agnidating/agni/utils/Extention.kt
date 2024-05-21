@@ -37,6 +37,7 @@ import com.hbb20.CountryCodePicker
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
 import java.io.IOException
 import java.io.InputStream
@@ -119,10 +120,16 @@ fun String.toAge(): String {
 
 fun ArrayList<File>.toMultipartList(key: String, type: String): ArrayList<MultipartBody.Part> {
     val list = ArrayList<MultipartBody.Part>()
-    this.forEach {
-        val requestBody = it.asRequestBody(type.toMediaTypeOrNull())
-        val part = MultipartBody.Part.createFormData(key, it.name, requestBody)
-        list.add(part)
+    if (isEmpty()) {
+        // If there are no images, add an empty image part
+        val emptyImagePart = MultipartBody.Part.createFormData(key, "", "".toRequestBody(type.toMediaTypeOrNull()))
+        list.add(emptyImagePart)
+    } else {
+        forEach {
+            val requestBody = it.asRequestBody(type.toMediaTypeOrNull())
+            val part = MultipartBody.Part.createFormData(key, it.name, requestBody)
+            list.add(part)
+        }
     }
     return list
 }
