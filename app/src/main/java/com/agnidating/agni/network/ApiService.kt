@@ -21,13 +21,24 @@ interface ApiService {
     ): Response<LoginResponse>
 
     @FormUrlEncoded
-    @POST("Home/firstTimeOtp")
-    suspend fun newRegister(
+    @POST("Home/loginuser")
+    suspend fun register_(
         @FieldMap map: HashMap<String, String>
     ): Response<LoginResponse>
 
     @FormUrlEncoded
     @POST("Home/firstTimeOtp")
+    suspend fun newRegister(
+        @FieldMap map: HashMap<String, String>
+    ): Response<LoginResponse>
+    @FormUrlEncoded
+    @POST("Home/registeruser")
+    suspend fun newRegister_(
+        @FieldMap map: HashMap<String, String>
+    ): Response<LoginResponse>
+
+    @FormUrlEncoded
+    @POST("Home/registeruser")
     suspend fun registerResend(
         @FieldMap map: HashMap<String, String>
     ): Response<BaseResponse>

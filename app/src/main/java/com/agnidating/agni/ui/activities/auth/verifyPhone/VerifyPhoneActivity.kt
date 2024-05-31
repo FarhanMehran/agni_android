@@ -3,12 +3,14 @@ package com.agnidating.agni.ui.activities.auth.verifyPhone
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.agnidating.agni.R
 import com.agnidating.agni.base.ScopedActivity
 import com.agnidating.agni.databinding.ActivityVerifyPhoneBinding
+import com.agnidating.agni.databinding.ActivityYourPhoneBinding
 import com.agnidating.agni.model.LoginResponse
 import com.agnidating.agni.network.ResultWrapper
 import com.agnidating.agni.ui.activities.addImages.AddImagesActivity
@@ -17,9 +19,11 @@ import com.agnidating.agni.ui.activities.completeProfile.CompleteProfileActivity
 import com.agnidating.agni.ui.activities.dashboard.DashboardActivity
 import com.agnidating.agni.ui.activities.writeBio.WriteBio
 import com.agnidating.agni.utils.*
+import com.agnidating.agni.utils.sharedPreference.Otp_pref
 import com.agnidating.agni.utils.sharedPreference.SharedPrefs
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlin.random.Random
 
 
 /**
@@ -34,6 +38,9 @@ class VerifyPhoneActivity : ScopedActivity() {
     private var phone: String=""
     private var countryCode: String=""
     private lateinit var binding: ActivityVerifyPhoneBinding
+    lateinit var otp_share : Otp_pref
+
+    var count = 0;
 
     @Inject
     lateinit var sharedPrefs: SharedPrefs
@@ -44,7 +51,8 @@ class VerifyPhoneActivity : ScopedActivity() {
         super.onCreate(savedInstanceState)
         sharedPrefs.isSubscribed().toString().logs()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_verify_phone)
-        startTimer()
+       otp_share = com.agnidating.agni.utils.sharedPreference.Otp_pref(this)
+        startTimer(60000)
         status=intent.extras?.getString(CommonKeys.STATUS)?:"0"
         clickListeners()
         bindObserver()
@@ -54,23 +62,26 @@ class VerifyPhoneActivity : ScopedActivity() {
         }
     }
 
-    private fun startTimer() {
-        binding.tvResendTimer.visible()
-        binding.tvResend.setTextColor(ContextCompat.getColor(this@VerifyPhoneActivity,R.color.light_grey))
-        binding.tvResend.isEnabled=false
-        object : CountDownTimer(30000, 1000) {
-            @SuppressLint("SetTextI18n")
-            override fun onTick(millisUntilFinished: Long) {
-                binding.tvResendTimer.text = "00:" + String.format("%02d", millisUntilFinished / 1000)
-            }
+        private fun startTimer(mills : Long) {
+            binding.tvResendTimer.visible()
+            binding.tvResend.setTextColor(ContextCompat.getColor(this@VerifyPhoneActivity,R.color.light_grey))
+            binding.tvResend.isEnabled=false
+            object : CountDownTimer(mills, 1000) {
+                @SuppressLint("SetTextI18n")
+                override fun onTick(millisUntilFinished: Long) {
 
-            override fun onFinish() {
-                binding.tvResend.setTextColor(ContextCompat.getColor(this@VerifyPhoneActivity,R.color.orange_pink))
-                binding.tvResend.isEnabled=true
-                binding.tvResendTimer.gone()
-            }
-        }.start()
-    }
+                    val minutes = millisUntilFinished / 1000 / 60
+                    val seconds = (millisUntilFinished / 1000) % 60
+                    binding.tvResendTimer.text = String.format("%02d:%02d", minutes, seconds)
+                }
+
+                override fun onFinish() {
+                    binding.tvResend.setTextColor(ContextCompat.getColor(this@VerifyPhoneActivity,R.color.orange_pink))
+                    binding.tvResend.isEnabled=true
+                    binding.tvResendTimer.gone()
+                }
+            }.start()
+        }
 
     /**
      * handle click listeners
@@ -114,11 +125,13 @@ class VerifyPhoneActivity : ScopedActivity() {
                 map["devType"] = "android"
                 map["status"] = status
                 map["devToken"] = devToken
+                map["unique_id"] = getDeviceIds()
                 viewModel.registerResend(map)
             }else{
                 val map = HashMap<String, String>()
                 map["phone"] = phone.replace(" ","").replace("-","")
                 map["countrycode"] = countryCode
+                map["unique_id"] = getDeviceIds()
                 viewModel.resendOtp(map)
             }
         }
@@ -153,6 +166,7 @@ class VerifyPhoneActivity : ScopedActivity() {
                 }
                 is ResultWrapper.Success -> {
                     hideProgress()
+                    otp_share.set_own_time(CommonKeys.OTP_OWN_TIME,getTime())
                     handleResponse(it)
                     it.data.data.phoneOtp.logs()
                 }
@@ -170,11 +184,37 @@ class VerifyPhoneActivity : ScopedActivity() {
                 is ResultWrapper.Success -> {
                     hideProgress()
                     showToast("Otp Resent")
-                    startTimer()
+
+                    var count = it.data.reques_count
+
+                    Log.d("count",count.toString())
+
+                    if (count != null) {
+                        otp_share.save_count(CommonKeys.OTP_COUNT,count)
+
+                        when(count)
+                        {
+                            1 -> startTimer(60000)
+                            2 -> startTimer(180000)
+                            3 -> startTimer(300000)
+                        }
+                    }
+
+
+
                 }
                 is ResultWrapper.Error -> {
                     hideProgress()
-                    showToast(it.error?.message.toString())
+                    if(it.error?.created_time != null)
+                    {
+                        startTimer(300000)
+                        otp_share.save_time(CommonKeys.OTP_TIME, it.error?.created_time.toString())
+                        showToast(it.error?.message.toString()+" "+ it.error?.created_time.toString())
+                    }
+                    else
+                    {
+                        showToast(it.error?.message.toString())
+                    }
                 }
             }
         }

@@ -2,12 +2,13 @@ package com.agnidating.agni.ui.activities.auth.phone
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
 import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
 import com.agnidating.agni.R
@@ -19,9 +20,11 @@ import com.agnidating.agni.ui.activities.auth.AuthViewModel
 import com.agnidating.agni.ui.activities.auth.verifyPhone.VerifyPhoneActivity
 import com.agnidating.agni.ui.activities.auth.selectCountry.SelectCountry
 import com.agnidating.agni.utils.*
+import com.agnidating.agni.utils.sharedPreference.Otp_pref
 import com.agnidating.agni.utils.sharedPreference.SharedPrefs
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlin.random.Random
 
 /**
  * Created by AJAY ASIJA
@@ -33,6 +36,8 @@ class YourPhoneActivity : ScopedActivity(){
     private lateinit var binding: ActivityYourPhoneBinding
     private var country: Country? = null
     private var status: String? = null
+    private var count_otp : Int? = null
+    lateinit var otp_share : Otp_pref
 
     @Inject
     lateinit var sharedPrefs: SharedPrefs
@@ -45,12 +50,46 @@ class YourPhoneActivity : ScopedActivity(){
         getDeviceToken {
             devToken=it
         }
+
+
+        otp_share = com.agnidating.agni.utils.sharedPreference.Otp_pref(this)
         status=intent.getStringExtra(CommonKeys.STATUS)
+        count_otp=intent.getIntExtra(CommonKeys.OTP_COUNT_INTENT_KEY,0)
+
+
+        when(count_otp)
+        {
+            2 -> start_phone_timer(180000)
+            3 -> start_phone_timer(300000)
+        }
+
         createLaunchers()
         getIntentData()
         iniView()
         onClickListener()
         bindObserver()
+    }
+
+
+    private fun start_phone_timer(mills : Long) {
+        binding.countTimer.visible()
+        binding.btNext.setBackgroundResource(R.drawable.disable_btn_bg)
+        binding.btNext.isEnabled=false
+        object : CountDownTimer(mills, 1000) {
+            @SuppressLint("SetTextI18n")
+            override fun onTick(millisUntilFinished: Long) {
+
+                val minutes = millisUntilFinished / 1000 / 60
+                val seconds = (millisUntilFinished / 1000) % 60
+                binding.countTimer.text = String.format("%02d:%02d", minutes, seconds)
+            }
+
+            override fun onFinish() {
+                binding.btNext.setBackgroundResource(R.drawable.buttons)
+                binding.btNext.isEnabled=true
+                binding.countTimer.gone()
+            }
+        }.start()
     }
 
     /**
@@ -102,7 +141,6 @@ class YourPhoneActivity : ScopedActivity(){
                 }
                 is ResultWrapper.Success -> {
                     hideProgress()
-                    if(it.data.token!=null)
                     sharedPrefs.save(CommonKeys.TOKEN, "Bearer ${it.data.token}")
                     if(status=="0"){
                         it.data.data.phoneOtp.logs()
@@ -119,7 +157,15 @@ class YourPhoneActivity : ScopedActivity(){
                 is ResultWrapper.Error -> {
                     it.error?.message?.logs()
                     hideProgress()
-                    showToast(it.error?.message.toString())
+                    if(it.error?.created_time != null)
+                    {
+                        start_phone_timer(300000)
+                        showToast(it.error?.message.toString()+" "+ it.error?.created_time.toString())
+                    }
+                    else
+                    {
+                        showToast(it.error?.message.toString())
+                    }
                 }
             }
         }
@@ -169,6 +215,9 @@ class YourPhoneActivity : ScopedActivity(){
                     map["devType"] = "android"
                     map["status"] = status.toString()
                     map["devToken"] = devToken
+                    map["unique_id"] = getDeviceIds()+377.toString()
+
+                    Log.d("device_id",map.toString())
                     viewModel.register(map)
                 }
             }

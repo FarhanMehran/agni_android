@@ -28,6 +28,13 @@ object CommonKeys {
     //keys
     const val TOKEN="token"
 
+    //otp pref
+    const val OTP_COUNT = "otp_count"
+    const val OTP_TIME = "otp_time"
+    const val OTP_OWN_TIME = "otp_own_time"
+
+    const val OTP_COUNT_INTENT_KEY="otp_key"
+
     const val DESTINATION="destination"
     const val LOGGED_IN="logged_in"
     const val NAME="name"

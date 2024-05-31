@@ -13,6 +13,7 @@ import android.text.TextUtils
 import android.text.format.DateUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.util.Log
 import android.util.Patterns
 import android.util.TypedValue
 import android.view.View
@@ -59,6 +60,23 @@ fun String.isValidEmail(): Boolean {
 
 fun View.gone() {
     this.visibility = View.GONE
+}
+
+fun Context.getTime() : String
+{
+    // Get current date and time
+    val currentDate = Date()
+
+    // Define the format
+    val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+
+    // Format the date
+    val formattedDate = sdf.format(currentDate)
+
+    // Display the formatted date and time
+    Log.d("FormattedDateTime", formattedDate)
+
+    return formattedDate
 }
 
 val Number.toPx

@@ -20,20 +20,28 @@ class GetStarted : AppCompatActivity() {
         changeStatusBarColorToTransParent()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_get_started)
         listener()
+
+
+
     }
 
     /**
      * Register all listener here
      */
     private fun listener() {
+        var otp_share = com.agnidating.agni.utils.sharedPreference.Otp_pref(this)
+        var otp_count = otp_share.get_count(CommonKeys.OTP_COUNT,0)
+
         binding.btGetStarted.setOnClickListener {
             val intent=Intent(this,YourPhoneActivity::class.java)
             intent.putExtra(CommonKeys.STATUS,"1")
+            intent.putExtra(CommonKeys.OTP_COUNT_INTENT_KEY,otp_count)
             startActivity(intent)
         }
         binding.consThree.setOnClickListener {
             val intent=Intent(this,YourPhoneActivity::class.java)
             intent.putExtra(CommonKeys.STATUS,"0")
+            intent.putExtra(CommonKeys.OTP_COUNT_INTENT_KEY,otp_count)
             startActivity(intent)
         }
     }

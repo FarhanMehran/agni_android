@@ -9,4 +9,12 @@ open class BaseResponse{
     var message:String?=null
     @SerializedName("isAuthorized")
     var isAuthorized:Int?=null
+
+    @SerializedName("count_otp")
+    var reques_count:Int?=null
+
+
+    @SerializedName("created_time")
+    var created_time:String?=null
+
 }

@@ -39,8 +39,6 @@ class MessageAdapter @Inject constructor(val list: ArrayList<Data>, private val 
     override fun getItemCount(): Int {
         return list.size
     }
-
-
 }
 
 

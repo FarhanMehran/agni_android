@@ -3,6 +3,7 @@ package com.agnidating.agni.ui.fragment.message
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,7 @@ import com.agnidating.agni.utils.sharedPreference.SharedPrefs
 import com.agnidating.agni.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlin.math.truncate
 
 @AndroidEntryPoint
 class MessageFragment:ScopedFragment() {
@@ -63,6 +65,10 @@ class MessageFragment:ScopedFragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun bindObserver() {
+
+
+        Log.d("bindObserver","call")
+
         viewModel.recentChat.observe(viewLifecycleOwner){
             (requireActivity() as ScopedActivity).hideProgress()
             if(it.data.isNullOrEmpty().not()){
@@ -71,8 +77,11 @@ class MessageFragment:ScopedFragment() {
                 binding.rvMessageList.visible()
                 binding.rlNoMessage.gone()
                 messageAdapter.notifyDataSetChanged()
+
+                Log.d("recent_chat_observer", true.toString())
             }
             else{
+                Log.d("recent_chat_observer",false.toString())
                 binding.rvMessageList.gone()
                 binding.rlNoMessage.visible()
             }
