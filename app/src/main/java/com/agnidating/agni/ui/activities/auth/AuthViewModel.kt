@@ -26,7 +26,7 @@ class AuthViewModel @Inject constructor(val apiService: ApiService):BaseViewMode
     fun register(map:HashMap<String,String>){
         registerLiveData.postValue(ResultWrapper.Loading())
         viewModelScope.launch(Dispatchers.IO) {
-            val response= safeApiCall { if(map["status"]=="1") apiService.newRegister_(map) else  apiService.register_(map)}
+            val response= safeApiCall { if(map["status"]=="1") apiService.newRegister(map) else  apiService.register(map)}
             registerLiveData.postValue(response)
         }
     }
